@@ -1,0 +1,32 @@
+pom.xml jelentése project of maven
+annotáció: megcímzett objektumok, amik build közben lefutnak
+
+verzió 11-es legyen:
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+LOMBOK dependency:
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<optional>true</optional>
+	</dependency>
+lombok miatt nem kell külön getter/setter-t írni, csak annotációként 
+(ha van saját setter, akkor nem fogja a lombok az övét használni)
+
+@Bean: a rendszer nem hozza létre. pl egy objektum metódusa bean-el tér vissza
+
+@Component: automatikusan és kötelezően létrejön ha a program buildel
+
+@Autowired: setter objektum. ezzel lehet kikeresni a Component-ek közül az objektumot amire szükség van
+	nem ajánlott konstruktorba rakni (cop), inkább setterbe (nem cop)
+	nem lehet private ! 
+
+@Primary:
+@Qualifier: 
+
+létrehozáskor két féle objektum lehet: 
+- singletone objektum: egyszer létrehozódik, meg van jegyezve. mindig ugyanez lesz hozzáadva ha kérjük
+	(ha más nincs megadva akkor az objektum singletone lesz)
+- prototype:
